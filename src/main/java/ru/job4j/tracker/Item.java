@@ -1,5 +1,9 @@
 package ru.job4j.tracker;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public class Item {
     private int id;
     private String name;
@@ -31,5 +35,13 @@ public class Item {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    private LocalDateTime created() {
+        return LocalDateTime.now();
+    }
+
+    public LocalDateTime getLocalDateTime() {
+        return created();
     }
 }
