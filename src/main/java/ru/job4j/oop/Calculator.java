@@ -23,6 +23,14 @@ public class Calculator {
         return sum(a) + multiply(a) + minus(a) + divide(a);
     }
 
+    public double add(double first, double second) {
+        return first + second;
+    }
+
+    public double add(double first, double second, double third) {
+        return add(first, add(second, third));
+    }
+
     public static void main(String[] args) {
         int result = sum(10);
         System.out.println(result);
