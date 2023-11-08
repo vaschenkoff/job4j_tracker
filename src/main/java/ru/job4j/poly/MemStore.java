@@ -1,7 +1,5 @@
 package ru.job4j.poly;
 
-import java.io.File;
-
 public class MemStore implements Store {
     private String[] mem = new String[100];
     private int size = 0;
