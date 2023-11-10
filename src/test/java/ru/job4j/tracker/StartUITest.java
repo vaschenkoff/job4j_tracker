@@ -46,7 +46,7 @@ class StartUITest {
         Tracker tracker = new Tracker();
         Item item = new Item("test535");
         tracker.add(item);
-        String[] answers = { String.valueOf(item.getId()) };
+        String[] answers = {String.valueOf(item.getId())};
         StartUI.deleteItem(new MockInput(answers), tracker);
         assertThat(tracker.findById(item.getId())).isEqualTo(null);
     }
