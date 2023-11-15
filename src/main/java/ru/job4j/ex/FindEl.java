@@ -8,9 +8,9 @@ public class FindEl {
                 rsl = i;
                 break;
             }
-            if (rsl == -1) {
-                throw new ElementNotFoundException("Index is not found");
-            }
+        }
+        if (rsl == -1) {
+            throw new ElementNotFoundException("Index is not found");
         }
         return rsl;
     }
@@ -33,7 +33,7 @@ public class FindEl {
     public static void main(String[] args) throws ElementNotFoundException {
         String[] arr = {"privet", "kak dela"};
         try {
-            indexOf(arr, "priv");
+            indexOf(arr, "privet");
         } catch (ElementNotFoundException e) {
             e.printStackTrace();
         }
