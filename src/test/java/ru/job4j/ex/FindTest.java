@@ -63,5 +63,4 @@ class FindTest {
         String expected = "one";
         assertThat(result).isEqualTo(expected);
     }
-
 }
