@@ -7,7 +7,8 @@ public class FindEl {
             if (key.equals(value[i])) {
                 rsl = i;
                 break;
-            } else {
+            }
+            if (rsl == -1) {
                 throw new ElementNotFoundException("Index is not found");
             }
         }
@@ -32,7 +33,7 @@ public class FindEl {
     public static void main(String[] args) throws ElementNotFoundException {
         String[] arr = {"privet", "kak dela"};
         try {
-            indexOf(arr, "privet");
+            indexOf(arr, "priv");
         } catch (ElementNotFoundException e) {
             e.printStackTrace();
         }
