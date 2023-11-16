@@ -32,14 +32,10 @@ public class SingleTracker {
     }
 
     public boolean replace(int id, Item item) {
-        return false;
-    }
-
-    private int indexOf(int id) {
-        return 0;
+        return tracker.replace(id, item);
     }
 
     public boolean delete(int id) {
-        return false;
+        return tracker.delete(id);
     }
 }
