@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MockInput implements Input {
-    //private String[] answers;
     private List<String> answers;
     private int position = 0;
 
