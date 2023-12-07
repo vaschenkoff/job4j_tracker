@@ -14,20 +14,17 @@ public class ReconstructPhrase {
 
     private String getEvenElements() {
         StringBuilder even = new StringBuilder();
-        for (int i = 0; i < evenElements.size(); i++) {
-            even.append(evenElements.peek());
+        for (int i = 0; i < evenElements.size();) {
+            even.append(evenElements.poll());
             evenElements.poll();
-            evenElements.poll();
-            i--;
         }
         return String.valueOf(even);
     }
 
     private String getDescendingElements() {
         StringBuilder descend = new StringBuilder();
-        for (int i = descendingElements.size() - 1; i >= 0; i--) {
-            descend.append(descendingElements.getLast());
-            descendingElements.pollLast();
+        for (int i = 0; i < descendingElements.size();) {
+            descend.append(descendingElements.pollLast());
         }
         return String.valueOf(descend);
     }
