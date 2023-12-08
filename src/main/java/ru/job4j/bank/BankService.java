@@ -17,14 +17,14 @@ public class BankService {
     }
 
     public void deleteUser(String passport) {
-        User user = findByPassport(passport);
-        users.remove(user);
+        users.remove(new User(passport, ""));
     }
 
     public void addAccount(String passport, Account account) {
         User user = findByPassport(passport);
-        if (user != null && !users.get(user).contains(account)) {
-            users.get(user).add(account);
+        List<Account> acc = users.get(user);
+        if (user != null && !acc.contains(account)) {
+            acc.add(account);
         }
     }
 
