@@ -22,9 +22,11 @@ public class BankService {
 
     public void addAccount(String passport, Account account) {
         User user = findByPassport(passport);
-        List<Account> acc = users.get(user);
-        if (user != null && !acc.contains(account)) {
-            acc.add(account);
+        if (user != null) {
+            List<Account> acc = users.get(user);
+            if (!acc.contains(account)) {
+                acc.add(account);
+            }
         }
     }
 
