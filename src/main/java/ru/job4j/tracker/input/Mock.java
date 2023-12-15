@@ -1,13 +1,12 @@
-package ru.job4j.tracker;
+package ru.job4j.tracker.input;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class MockInput implements Input {
+public class Mock implements Input {
     private List<String> answers;
     private int position = 0;
 
-    public MockInput(List<String> answers) {
+    public Mock(List<String> answers) {
         this.answers = answers;
     }
 
