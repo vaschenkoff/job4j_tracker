@@ -24,8 +24,8 @@ class StartUITest {
         Input in = new Mock(answers);
         Tracker tracker = new Tracker();
         List<UserAction> actions = new ArrayList<>();
-                actions.add(new Create(out));
-                actions.add(new Exit(out));
+        actions.add(new Create(out));
+        actions.add(new Exit(out));
 
         new StartUI(out).init(in, tracker, actions);
         assertThat(tracker.findAll().get(0).getName()).isEqualTo("Item name");
@@ -217,5 +217,37 @@ class StartUITest {
                         + "0. Завершить программу" + ln
                         + "=== Завершение программы ===" + ln
         );
+    }
+
+    @Test
+    void whenSortedByName1() {
+        List<Item> items = new ArrayList<>();
+        items.add(new Item("Second"));
+        items.add(new Item("Third"));
+        items.add(new Item("Fourth"));
+        items.add(new Item("First"));
+        items.sort(new ItemAscByName());
+        List<Item> expected = new ArrayList<>();
+        expected.add(new Item("First"));
+        expected.add(new Item("Fourth"));
+        expected.add(new Item("Second"));
+        expected.add(new Item("Third"));
+        assertThat(items.equals(expected)).isTrue();
+    }
+
+    @Test
+    void whenSortedByName2() {
+        List<Item> items = new ArrayList<>();
+        items.add(new Item("Second"));
+        items.add(new Item("Third"));
+        items.add(new Item("Fourth"));
+        items.add(new Item("First"));
+        items.sort(new ItemDescByName());
+        List<Item> expected = new ArrayList<>();
+        expected.add(new Item("Third"));
+        expected.add(new Item("Second"));
+        expected.add(new Item("Fourth"));
+        expected.add(new Item("First"));
+        assertThat(items.equals(expected)).isTrue();
     }
 }
