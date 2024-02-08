@@ -7,11 +7,8 @@ import java.util.stream.Collectors;
 
 public class School {
     public List<Student> collect(List<Student> students, Predicate<Student> predicate) {
-        //List<Student> result = new ArrayList<>();
-        //predicate = s -> s.getScore() >= 50;
         return students.stream()
                 .filter(predicate)
                 .collect(Collectors.toList());
-        //return result;
     }
 }
