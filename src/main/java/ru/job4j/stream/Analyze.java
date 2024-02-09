@@ -10,7 +10,7 @@ public class Analyze {
     public static double averageScore(Stream<Pupil> stream) {
         return stream
                 .flatMap(p -> p.subjects().stream())
-                .mapToInt(p -> Integer.parseInt(String.valueOf(p.score())))
+                .mapToInt(Subject::score)
                 .average()
                 .orElse(0.0);
     }
@@ -20,7 +20,7 @@ public class Analyze {
                 .map(p -> new Tuple(p.name(),
                         (p.subjects()
                                 .stream()
-                                .mapToInt(s -> Integer.parseInt(String.valueOf(s.score())))
+                                .mapToInt(Subject::score)
                                 .average()
                                 .orElse(0.0))))
                 .collect(Collectors.toList());
@@ -40,7 +40,7 @@ public class Analyze {
                 .map(p -> new Tuple(p.name(),
                         (p.subjects()
                                 .stream()
-                                .mapToInt(s -> Integer.parseInt(String.valueOf(s.score())))
+                                .mapToInt(Subject::score)
                                 .sum())))
                 .max(Comparator.comparingDouble(Tuple::score))
                 .orElse(null);
